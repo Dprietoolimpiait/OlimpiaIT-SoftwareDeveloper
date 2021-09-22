@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:65442/InvoiceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Manager" />
+  <xs:complexType name="ArrayOfInvoiceData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceData" nillable="true" type="tns:InvoiceData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceData" nillable="true" type="tns:ArrayOfInvoiceData" />
+  <xs:complexType name="InvoiceData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcentajeIVA" type="xs:double" />
+      <xs:element minOccurs="0" name="ValorTotal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceData" nillable="true" type="tns:InvoiceData" />
+  <xs:complexType name="ResultadoValidacionFactura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacturasValidas" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Manager" minOccurs="0" name="Mensajes" nillable="true" type="q1:ArrayOfResultData" />
+      <xs:element minOccurs="0" name="TotalFacturas" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoValidacionFactura" nillable="true" type="tns:ResultadoValidacionFactura" />
+</xs:schema>

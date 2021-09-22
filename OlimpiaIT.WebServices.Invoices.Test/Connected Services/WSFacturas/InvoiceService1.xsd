@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Manager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OlimpiaIT.WebServices.Invoices.Manager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:65442/InvoiceService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfResultData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultData" nillable="true" type="tns:ResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultData" nillable="true" type="tns:ArrayOfResultData" />
+  <xs:complexType name="ResultData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdFactura" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Mensajes" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultData" nillable="true" type="tns:ResultData" />
+</xs:schema>
