@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="OlimpiaIT.WebServices.Invoices.FacturaService" CodeBehind="InvoiceService.svc.cs" %>
